@@ -1,0 +1,468 @@
+EESchema Schematic File Version 4
+LIBS:motor-speed-controller-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Motor speed controller for INGCO MG1502.2"
+Date "2019-04-02"
+Rev "1.0"
+Comp "Dilshan R Jayakody"
+Comment1 "jayakody2000lk@gmail.com"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_PIC12:PIC12F629-IP U1
+U 1 1 5CA06306
+P 7550 4000
+F 0 "U1" H 7200 3550 50  0000 C CNN
+F 1 "PIC12F629-IP" H 7900 4450 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm_LongPads" H 8150 4650 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/41190G.pdf" H 7550 4000 50  0001 C CNN
+	1    7550 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5CA06500
+P 2400 3550
+F 0 "C1" H 2450 3650 50  0000 L CNN
+F 1 "0.27MFD" H 2450 3450 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L18.0mm_W5.0mm_P15.00mm_FKS3_FKP3" H 2438 3400 50  0001 C CNN
+F 3 "~" H 2400 3550 50  0001 C CNN
+	1    2400 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J1
+U 1 1 5CA068E6
+P 2050 4100
+F 0 "J1" H 2157 4282 50  0000 C CNN
+F 1 "AC-IN1" H 2157 4189 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D3.0mm" H 2050 4100 50  0001 C CNN
+F 3 "~" H 2050 4100 50  0001 C CNN
+	1    2050 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J2
+U 1 1 5CA069BC
+P 2050 3100
+F 0 "J2" H 2157 3282 50  0000 C CNN
+F 1 "AC-IN1" H 2157 3189 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D3.0mm" H 2050 3100 50  0001 C CNN
+F 3 "~" H 2050 3100 50  0001 C CNN
+	1    2050 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L1
+U 1 1 5CA06B94
+P 2750 4100
+F 0 "L1" V 2979 4100 50  0000 C CNN
+F 1 "1mH" V 2886 4100 50  0000 C CNN
+F 2 "Inductor_THT:L_Radial_D7.0mm_P3.00mm" H 2750 4100 50  0001 C CNN
+F 3 "~" H 2750 4100 50  0001 C CNN
+	1    2750 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J3
+U 1 1 5CA06C48
+P 2000 4500
+F 0 "J3" H 2107 4682 50  0000 C CNN
+F 1 "MOTOR-1" H 2107 4589 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D3.0mm" H 2000 4500 50  0001 C CNN
+F 3 "~" H 2000 4500 50  0001 C CNN
+	1    2000 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5CA06DDE
+P 3350 4100
+F 0 "R1" V 3140 4100 50  0000 C CNN
+F 1 "390R" V 3233 4100 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P5.08mm_Vertical" V 3280 4100 50  0001 C CNN
+F 3 "~" H 3350 4100 50  0001 C CNN
+	1    3350 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5CA06ECF
+P 3850 4100
+F 0 "C2" V 3700 4050 50  0000 L CNN
+F 1 "0.1MFD" V 4000 4000 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L11.0mm_W5.1mm_P10.00mm_MKT" H 3888 3950 50  0001 C CNN
+F 3 "~" H 3850 4100 50  0001 C CNN
+	1    3850 4100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3700 4100 3600 4100
+$Comp
+L Device:D_Zener D1
+U 1 1 5CA07353
+P 4250 3600
+F 0 "D1" V 4203 3679 50  0000 L CNN
+F 1 "1N4733A" V 4296 3679 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal" H 4250 3600 50  0001 C CNN
+F 3 "~" H 4250 3600 50  0001 C CNN
+	1    4250 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 5CA0763F
+P 4500 4100
+F 0 "D2" H 4500 4319 50  0000 C CNN
+F 1 "1N4007" H 4500 4226 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal" H 4500 4100 50  0001 C CNN
+F 3 "~" H 4500 4100 50  0001 C CNN
+	1    4500 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 4100 3050 4100
+Wire Wire Line
+	2250 4100 2400 4100
+Wire Wire Line
+	2250 3100 2400 3100
+Wire Wire Line
+	2400 3100 2400 3400
+Wire Wire Line
+	2400 3700 2400 4100
+Connection ~ 2400 4100
+Wire Wire Line
+	2400 4100 2600 4100
+Wire Wire Line
+	2200 4500 3050 4500
+Wire Wire Line
+	3050 4500 3050 4100
+Connection ~ 3050 4100
+Wire Wire Line
+	3050 4100 3200 4100
+Wire Wire Line
+	2400 3100 3600 3100
+Wire Wire Line
+	4250 3100 4250 3450
+Connection ~ 2400 3100
+Wire Wire Line
+	4000 4100 4250 4100
+Wire Wire Line
+	4250 4100 4250 3750
+Wire Wire Line
+	4350 4100 4250 4100
+Connection ~ 4250 4100
+$Comp
+L power:GND #PWR0101
+U 1 1 5CA0853F
+P 4750 4400
+F 0 "#PWR0101" H 4750 4150 50  0001 C CNN
+F 1 "GND" H 4755 4225 50  0000 C CNN
+F 2 "" H 4750 4400 50  0001 C CNN
+F 3 "" H 4750 4400 50  0001 C CNN
+	1    4750 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 4100 4750 4100
+Wire Wire Line
+	4750 4100 4750 4400
+$Comp
+L Device:C C3
+U 1 1 5CA086BF
+P 5100 3600
+F 0 "C3" H 5150 3700 50  0000 L CNN
+F 1 "0.1MFD" H 5150 3500 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5138 3450 50  0001 C CNN
+F 3 "~" H 5100 3600 50  0001 C CNN
+	1    5100 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 3100 5100 3450
+Connection ~ 4250 3100
+$Comp
+L power:GND #PWR0102
+U 1 1 5CA088C6
+P 5100 4400
+F 0 "#PWR0102" H 5100 4150 50  0001 C CNN
+F 1 "GND" H 5105 4225 50  0000 C CNN
+F 2 "" H 5100 4400 50  0001 C CNN
+F 3 "" H 5100 4400 50  0001 C CNN
+	1    5100 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 3750 5100 4400
+$Comp
+L Device:CP C4
+U 1 1 5CA08B8D
+P 5650 3600
+F 0 "C4" H 5750 3700 50  0000 L CNN
+F 1 "220MFD" H 5700 3500 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 5688 3450 50  0001 C CNN
+F 3 "~" H 5650 3600 50  0001 C CNN
+	1    5650 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3100 5650 3450
+$Comp
+L power:GND #PWR0103
+U 1 1 5CA08E29
+P 5650 4400
+F 0 "#PWR0103" H 5650 4150 50  0001 C CNN
+F 1 "GND" H 5655 4225 50  0000 C CNN
+F 2 "" H 5650 4400 50  0001 C CNN
+F 3 "" H 5650 4400 50  0001 C CNN
+	1    5650 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3750 5650 4400
+Wire Wire Line
+	4250 3100 5100 3100
+Wire Wire Line
+	5650 3100 5100 3100
+Connection ~ 5100 3100
+$Comp
+L Device:C C5
+U 1 1 5CA0998D
+P 6300 3600
+F 0 "C5" H 6350 3700 50  0000 L CNN
+F 1 "0.1MFD" H 6350 3500 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 6338 3450 50  0001 C CNN
+F 3 "~" H 6300 3600 50  0001 C CNN
+	1    6300 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 3450 6300 3100
+Wire Wire Line
+	6300 3100 5650 3100
+Connection ~ 5650 3100
+$Comp
+L power:GND #PWR0104
+U 1 1 5CA09C1C
+P 6300 4400
+F 0 "#PWR0104" H 6300 4150 50  0001 C CNN
+F 1 "GND" H 6305 4225 50  0000 C CNN
+F 2 "" H 6300 4400 50  0001 C CNN
+F 3 "" H 6300 4400 50  0001 C CNN
+	1    6300 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 3750 6300 4400
+Wire Wire Line
+	6300 3100 7550 3100
+Wire Wire Line
+	7550 3100 7550 3400
+Connection ~ 6300 3100
+$Comp
+L power:GND #PWR0105
+U 1 1 5CA0A39B
+P 7550 4700
+F 0 "#PWR0105" H 7550 4450 50  0001 C CNN
+F 1 "GND" H 7555 4525 50  0000 C CNN
+F 2 "" H 7550 4700 50  0001 C CNN
+F 3 "" H 7550 4700 50  0001 C CNN
+	1    7550 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 4600 7550 4700
+$Comp
+L Device:R R2
+U 1 1 5CA0A7AC
+P 3600 4600
+F 0 "R2" H 3530 4553 50  0000 R CNN
+F 1 "1M" H 3530 4646 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3530 4600 50  0001 C CNN
+F 3 "~" H 3600 4600 50  0001 C CNN
+	1    3600 4600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3600 4450 3600 4100
+Connection ~ 3600 4100
+Wire Wire Line
+	3600 4100 3500 4100
+Wire Wire Line
+	3600 4750 3600 4900
+Wire Wire Line
+	3600 4900 6750 4900
+Wire Wire Line
+	6750 4900 6750 4100
+Wire Wire Line
+	6750 4100 6950 4100
+$Comp
+L Device:R R3
+U 1 1 5CA0AFE0
+P 6750 3600
+F 0 "R3" H 6680 3553 50  0000 R CNN
+F 1 "100R" H 6680 3646 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 6680 3600 50  0001 C CNN
+F 3 "~" H 6750 3600 50  0001 C CNN
+	1    6750 3600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6950 3900 6750 3900
+Wire Wire Line
+	6750 3900 6750 3750
+$Comp
+L Device:Q_TRIAC_A1A2G D3
+U 1 1 5CA0B7E5
+P 3200 2600
+F 0 "D3" V 3374 2600 50  0000 C CNN
+F 1 "BT134-600" V 3467 2600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" V 3275 2625 50  0001 C CNN
+F 3 "~" V 3200 2600 50  0001 C CNN
+	1    3200 2600
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5CA0BF9B
+P 3600 2800
+F 0 "R4" H 3530 2753 50  0000 R CNN
+F 1 "0.22R" H 3530 2846 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P5.08mm_Vertical" V 3530 2800 50  0001 C CNN
+F 3 "~" H 3600 2800 50  0001 C CNN
+	1    3600 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L2
+U 1 1 5CA0CBC4
+P 2750 2600
+F 0 "L2" V 2979 2600 50  0000 C CNN
+F 1 "1mH" V 2886 2600 50  0000 C CNN
+F 2 "Inductor_THT:L_Radial_D7.0mm_P3.00mm" H 2750 2600 50  0001 C CNN
+F 3 "~" H 2750 2600 50  0001 C CNN
+	1    2750 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J4
+U 1 1 5CA0D22A
+P 2050 2600
+F 0 "J4" H 2157 2782 50  0000 C CNN
+F 1 "MOTOR-2" H 2157 2689 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D3.0mm" H 2050 2600 50  0001 C CNN
+F 3 "~" H 2050 2600 50  0001 C CNN
+	1    2050 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 2950 3600 3100
+Connection ~ 3600 3100
+Wire Wire Line
+	3600 3100 4250 3100
+Wire Wire Line
+	3350 2600 3600 2600
+Wire Wire Line
+	3600 2600 3600 2650
+Wire Wire Line
+	3300 2450 3300 2350
+Wire Wire Line
+	3300 2350 6750 2350
+Wire Wire Line
+	6750 2350 6750 3450
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5CA11829
+P 8350 4450
+F 0 "SW1" V 8303 4599 50  0000 L CNN
+F 1 "DOWN" V 8396 4599 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-10xx" H 8350 4650 50  0001 C CNN
+F 3 "" H 8350 4650 50  0001 C CNN
+	1    8350 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5CA11970
+P 8900 4450
+F 0 "SW2" V 8853 4599 50  0000 L CNN
+F 1 "UP" V 8946 4599 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-10xx" H 8900 4650 50  0001 C CNN
+F 3 "" H 8900 4650 50  0001 C CNN
+	1    8900 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5CA11A56
+P 8350 4700
+F 0 "#PWR0106" H 8350 4450 50  0001 C CNN
+F 1 "GND" H 8355 4525 50  0000 C CNN
+F 2 "" H 8350 4700 50  0001 C CNN
+F 3 "" H 8350 4700 50  0001 C CNN
+	1    8350 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5CA11A8B
+P 8900 4700
+F 0 "#PWR0107" H 8900 4450 50  0001 C CNN
+F 1 "GND" H 8905 4525 50  0000 C CNN
+F 2 "" H 8900 4700 50  0001 C CNN
+F 3 "" H 8900 4700 50  0001 C CNN
+	1    8900 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 4650 8350 4700
+Wire Wire Line
+	8900 4650 8900 4700
+Wire Wire Line
+	8150 4100 8350 4100
+Wire Wire Line
+	8350 4100 8350 4250
+Wire Wire Line
+	8150 4000 8900 4000
+Wire Wire Line
+	8900 4000 8900 4250
+$Comp
+L power:GND #PWR0108
+U 1 1 5CA1437A
+P 9400 4700
+F 0 "#PWR0108" H 9400 4450 50  0001 C CNN
+F 1 "GND" H 9405 4525 50  0000 C CNN
+F 2 "" H 9400 4700 50  0001 C CNN
+F 3 "" H 9400 4700 50  0001 C CNN
+	1    9400 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW3
+U 1 1 5CA14791
+P 8600 3900
+F 0 "SW3" H 8600 4139 50  0000 C CNN
+F 1 "POWER" H 8600 4046 50  0000 C CNN
+F 2 "motor-speed-controller-comp:SWITCH-SPST" H 8600 3900 50  0001 C CNN
+F 3 "" H 8600 3900 50  0001 C CNN
+	1    8600 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 3900 8400 3900
+Wire Wire Line
+	8800 3900 9400 3900
+Wire Wire Line
+	9400 3900 9400 4700
+NoConn ~ 6950 4000
+Wire Wire Line
+	2900 2600 3050 2600
+Wire Wire Line
+	2250 2600 2600 2600
+$EndSCHEMATC
